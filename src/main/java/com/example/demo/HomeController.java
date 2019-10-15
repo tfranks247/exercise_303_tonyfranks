@@ -39,11 +39,11 @@ public class HomeController {
         return "redirect:/";
     }
 
-    @RequestMapping("/create/{id}")
+    @RequestMapping("/details/{id}")
     public String createTodo(@PathVariable("id") long id, Model model)
     {
         model.addAttribute("todo", todoRepository.findById(id).get());
-        return "create";
+        return "show";
      }
 
      @RequestMapping("/update")
